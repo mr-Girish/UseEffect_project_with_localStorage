@@ -17,6 +17,7 @@ function App() {
   }
  
   useEffect(()=>{
+    // getting stored data from localStorage in dataaaa variable
     const dataaaaa=localStorage.getItem("Data");
     const parsedData=dataaaaa ? JSON.parse(dataaaaa):[];   // if data will be available in array then it will render that data otherwise it will render empty array
     SetdataArray(parsedData);
@@ -32,9 +33,9 @@ function App() {
        <h1>Your Notes are:</h1>
       {dataArray.map((data,index)=>{
         return(
-          <>  
-            <p key={index}>{data}</p>
-          </>
+          <div key={index}>  
+            <p>{data}</p>
+          </div>
         )
       })}
     </div>
